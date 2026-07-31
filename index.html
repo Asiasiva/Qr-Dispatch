@@ -44,7 +44,7 @@
     header {
       background-color: var(--card-bg);
       border-bottom: 1px solid var(--border-color);
-      padding: 1rem 1.5rem;
+      padding: 0.8rem 1.2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -54,42 +54,43 @@
       box-shadow: var(--shadow);
     }
     .shop-brand { display: flex; align-items: center; gap: 12px; }
-    .shop-logo { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; background: #e2e8f0; }
-    .shop-title { font-size: 1.25rem; font-weight: 700; color: var(--primary); }
-    .header-actions { display: flex; align-items: center; gap: 12px; }
-    .btn-icon { background: none; border: 1px solid var(--border-color); color: var(--text-main); padding: 8px 12px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 6px; font-weight: 600; }
+    .shop-logo { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; background: #e2e8f0; }
+    .shop-title { font-size: 1.2rem; font-weight: 700; color: var(--primary); }
+    .header-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .btn-icon { background: none; border: 1px solid var(--border-color); color: var(--text-main); padding: 7px 12px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 0.85rem; transition: 0.2s; }
     .btn-icon:hover { background-color: var(--border-color); }
 
     .container { max-width: 1200px; margin: 20px auto; padding: 0 16px; }
 
     .category-scroll { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 20px; scrollbar-width: none; }
     .category-scroll::-webkit-scrollbar { display: none; }
-    .cat-btn { padding: 10px 20px; border-radius: 20px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-main); font-weight: 600; cursor: pointer; white-space: nowrap; transition: 0.2s; }
+    .cat-btn { padding: 9px 18px; border-radius: 20px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-main); font-weight: 600; cursor: pointer; white-space: nowrap; transition: 0.2s; font-size: 0.9rem; }
     .cat-btn.active, .cat-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
 
-    .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
-    .product-card { background: var(--card-bg); border-radius: var(--radius); border: 1px solid var(--border-color); padding: 16px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow); transition: transform 0.2s; }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+    .product-card { background: var(--card-bg); border-radius: var(--radius); border: 1px solid var(--border-color); padding: 14px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow); transition: transform 0.2s; }
     .product-card:hover { transform: translateY(-3px); }
-    .product-img { width: 100%; height: 140px; object-fit: cover; border-radius: 8px; margin-bottom: 12px; background: #f1f5f9; }
-    .product-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 4px; }
-    .product-price { font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 12px; }
+    .product-img { width: 100%; height: 130px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; background: #f1f5f9; }
+    .product-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 4px; }
+    .product-price { font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
     .qty-control { display: flex; align-items: center; justify-content: space-between; background: var(--bg-color); padding: 6px 12px; border-radius: 8px; border: 1px solid var(--border-color); }
     .qty-btn { background: var(--primary); color: white; border: none; width: 28px; height: 28px; border-radius: 50%; font-weight: bold; cursor: pointer; }
 
-    .cart-summary { position: fixed; bottom: 0; left: 0; right: 0; background: var(--card-bg); border-top: 1px solid var(--border-color); padding: 16px 24px; box-shadow: 0 -4px 16px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; z-index: 90; }
-    .btn-submit { background: var(--primary); color: white; border: none; padding: 12px 28px; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: 0.2s; }
+    .cart-summary { position: fixed; bottom: 0; left: 0; right: 0; background: var(--card-bg); border-top: 1px solid var(--border-color); padding: 14px 24px; box-shadow: 0 -4px 16px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; z-index: 90; }
+    .btn-submit { background: var(--primary); color: white; border: none; padding: 11px 24px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: 0.2s; }
     .btn-submit:hover { background: var(--primary-hover); }
-    .btn-clear { background: transparent; border: 1px solid var(--text-muted); color: var(--text-muted); padding: 12px 18px; border-radius: 8px; font-weight: 600; cursor: pointer; margin-right: 8px; }
+    .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .btn-clear { background: transparent; border: 1px solid var(--text-muted); color: var(--text-muted); padding: 11px 16px; border-radius: 8px; font-weight: 600; cursor: pointer; margin-right: 8px; }
 
-    .dashboard-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 20px; }
-    .metric-card { background: var(--card-bg); border-radius: var(--radius); padding: 16px; border: 1px solid var(--border-color); text-align: center; }
-    .metric-value { font-size: 1.8rem; font-weight: 800; color: var(--primary); }
-    .metric-label { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; }
+    .dashboard-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 20px; }
+    .metric-card { background: var(--card-bg); border-radius: var(--radius); padding: 14px; border: 1px solid var(--border-color); text-align: center; }
+    .metric-value { font-size: 1.7rem; font-weight: 800; color: var(--primary); }
+    .metric-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; }
 
     .filter-bar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; align-items: center; }
     .search-input { flex: 1; min-width: 200px; padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-main); }
 
-    .orders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+    .orders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 16px; }
     .order-card { background: var(--card-bg); border-radius: var(--radius); border-left: 6px solid var(--status-new); padding: 16px; box-shadow: var(--shadow); position: relative; }
     .order-card.status-new { border-left-color: var(--status-new); }
     .order-card.status-preparing { border-left-color: var(--status-preparing); }
@@ -122,14 +123,12 @@
     .form-group label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 0.9rem; }
     .form-control { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-main); }
 
-    /* Custom Toast Notification */
     .toast-container { position: fixed; top: 20px; right: 20px; z-index: 999; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
     .toast { background: #1e293b; color: #fff; padding: 12px 18px; border-radius: 8px; font-size: 0.9rem; font-weight: 600; box-shadow: 0 4px 12px rgba(0,0,0,0.2); animation: fadeIn 0.3s ease; }
     .toast.success { border-left: 4px solid #10b981; }
     .toast.error { border-left: 4px solid #ef4444; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* QR Grid Manager Layout */
     #qrCodeContainer {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -137,53 +136,71 @@
       margin-top: 10px;
     }
 
-    /* ==========================================
-       PRINT CSS (FIXED FOR FULL UNCROPPED QR CODE)
-       ========================================== */
+    /* PERFECT CENTERING PRINT ENGINE CSS */
     @media print {
+      @page {
+        size: auto;
+        margin: 0mm;
+      }
+
       html, body {
         width: 100% !important;
-        height: auto !important;
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
         overflow: visible !important;
         background: #ffffff !important;
         color: #000000 !important;
-        margin: 0 !important;
-        padding: 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
       }
 
       body * { 
         visibility: hidden !important; 
       }
 
-      /* Unconstrain print hierarchy for QR code sheet */
+      /* 1. Admin Table QR Codes Print Layout */
       body.printing-qrs .modal-overlay,
       body.printing-qrs .modal-body,
       body.printing-qrs #adminModal,
       body.printing-qrs #adminContentSection,
-      body.printing-qrs #qrTab {
-        position: static !important;
-        display: block !important;
-        overflow: visible !important;
-        max-height: none !important;
-        height: auto !important;
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        box-shadow: none !important;
-        background: transparent !important;
-        border: none !important;
-        visibility: visible !important;
-      }
-
+      body.printing-qrs #qrTab,
       body.printing-qrs #qrCodeContainer,
       body.printing-qrs #qrCodeContainer * {
         visibility: visible !important;
       }
 
+      body.printing-qrs .modal-overlay,
+      body.printing-qrs .modal-body,
+      body.printing-qrs #adminModal,
+      body.printing-qrs #adminContentSection,
+      body.printing-qrs #qrTab {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        overflow: visible !important;
+        max-height: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        background: #ffffff !important;
+        border: none !important;
+      }
+
       body.printing-qrs #qrCodeContainer {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 24px !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 20px !important;
         padding: 20px !important;
         width: 100% !important;
         box-sizing: border-box !important;
@@ -206,8 +223,8 @@
         break-inside: avoid !important;
         page-break-inside: avoid !important;
         overflow: visible !important;
-        height: auto !important;
         box-sizing: border-box !important;
+        margin: auto !important;
       }
 
       body.printing-qrs .qr-card-item.print-qr-selected img {
@@ -220,25 +237,56 @@
         object-fit: contain !important;
       }
 
-      body.printing-qrs .qr-card-title {
+      body.printing-qrs .qr-table-title {
         font-size: 16pt !important;
         font-weight: bold !important;
         color: #000000 !important;
         margin-top: 8px !important;
       }
 
-      /* Kitchen Slip Print Section */
+      /* 2. Dispatch Kitchen Order Ticket (KOT) Centered Print Layout */
+      body.printing-slip .modal-overlay,
+      body.printing-slip .modal-body,
+      body.printing-slip #printSlipModal,
       body.printing-slip #printableSlip,
       body.printing-slip #printableSlip * {
         visibility: visible !important;
       }
 
-      body.printing-slip #printableSlip {
-        position: absolute !important;
-        left: 0 !important;
+      body.printing-slip .modal-overlay,
+      body.printing-slip .modal-body,
+      body.printing-slip #printSlipModal {
+        position: fixed !important;
         top: 0 !important;
-        width: 100% !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        overflow: visible !important;
+        max-height: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        border: none !important;
+      }
+
+      body.printing-slip #printableSlip {
+        position: relative !important;
+        width: 80mm !important;
+        max-width: 90vw !important;
+        margin: auto !important;
+        padding: 15px !important;
         font-family: monospace !important;
+        font-size: 11pt !important;
+        color: #000000 !important;
+        background: #ffffff !important;
+        border: 1px solid #000000 !important;
+        box-sizing: border-box !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
       }
 
       .no-print {
@@ -274,6 +322,7 @@
       </div>
     </div>
     <div class="header-actions">
+      <!-- CUSTOMER VIEW HEADER: Theme & Status Only -->
       <button class="btn-icon" onclick="toggleTheme()">🌓 Theme</button>
       <span style="font-size: 0.8rem;" title="Database Status">
         <span id="dbStatusDot" class="status-indicator online"></span>
@@ -283,7 +332,7 @@
   </header>
 
   <div class="container">
-    <!-- CUSTOMER VIEW (AUTOMATICALLY OPENED UPON QR CODE SCAN) -->
+    <!-- CUSTOMER VIEW -->
     <main id="customerView">
       <div class="category-scroll" id="categoryContainer"></div>
       <div class="product-grid" id="productContainer"></div>
@@ -303,6 +352,12 @@
 
     <!-- DISPATCH / KITCHEN SCREEN VIEW -->
     <main id="dispatchView" style="display: none;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <h2 style="font-size: 1.3rem;">Kitchen Dispatch Dashboard</h2>
+        <!-- CUSTOMER VIEW BUTTON IN DISPATCH PANEL -->
+        <button class="btn-submit" onclick="switchView('customer')" style="background: var(--card-bg); color: var(--text-main); border: 1px solid var(--border-color);">🛒 Customer View</button>
+      </div>
+
       <div class="dashboard-metrics">
         <div class="metric-card"><div class="metric-value" id="mTotal">0</div><div class="metric-label">Total Orders</div></div>
         <div class="metric-card"><div class="metric-value" style="color:var(--status-new)" id="mNew">0</div><div class="metric-label">New</div></div>
@@ -324,7 +379,6 @@
     </main>
   </div>
 
-  <!-- Admin Modal (Secret Shortcut: Ctrl + Alt + Shift + A + S) -->
   <div class="modal-overlay" id="adminModal">
     <div class="modal-body">
       <button class="modal-close no-print" onclick="closeAdminModal()">&times;</button>
@@ -339,7 +393,11 @@
       </div>
 
       <div id="adminContentSection" style="display: none;">
-        <h2 class="no-print" style="margin-bottom: 16px;">System Control Panel</h2>
+        <div class="no-print" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <h2>System Control Panel</h2>
+          <!-- CUSTOMER VIEW BUTTON IN ADMIN PANEL -->
+          <button class="btn-icon" onclick="switchView('customer')" style="background: var(--primary); color: white;">🛒 Customer View</button>
+        </div>
         
         <div class="no-print" style="display: flex; gap: 8px; border-bottom: 1px solid var(--border-color); margin-bottom: 16px; flex-wrap: wrap;">
           <button class="cat-btn active" onclick="switchAdminTab('productsTab', this)">Products & Categories</button>
@@ -380,6 +438,7 @@
           <div class="form-group"><label>Shop Name</label><input type="text" id="settingShopName" class="form-control"></div>
           <div class="form-group"><label>Website Base URL (Required for Table QR Codes)</label><input type="url" id="settingBaseUrl" class="form-control" placeholder="e.g. https://myteashop.com/index.html"></div>
           <div class="form-group"><label>Shop UPI ID (GPay/PhonePe Payments)</label><input type="text" id="settingUpiId" class="form-control" placeholder="e.g. 9876543210@paytm"></div>
+          <div class="form-group"><label>Admin Password</label><input type="password" id="settingAdminPassword" class="form-control" placeholder="Default: 1234"></div>
           <div class="form-group"><label>Logo URL</label><input type="url" id="settingShopLogo" class="form-control"></div>
           <div class="form-group"><label>Currency Symbol</label><input type="text" id="settingCurrency" class="form-control" value="₹"></div>
           <div class="form-group"><label>GST %</label><input type="number" id="settingGST" class="form-control" value="0" min="0" max="100"></div>
@@ -417,11 +476,14 @@
           </div>
         </div>
 
+        <!-- Reports & Backup/Restore Tab -->
         <div id="reportsTab" class="admin-tab no-print" style="display: none;">
           <h4>Database Actions</h4>
           <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
             <button class="btn-icon" onclick="exportOrdersCSV()">📥 Export Today's Orders (CSV)</button>
             <button class="btn-icon" onclick="backupDatabaseJSON()">💾 Backup Database (JSON)</button>
+            <button class="btn-icon" onclick="document.getElementById('importBackupFile').click()">📤 Restore Database (JSON)</button>
+            <input type="file" id="importBackupFile" accept=".json" style="display:none;" onchange="restoreDatabaseJSON(event)">
             <button class="btn-icon" onclick="clearTodaysOrders()" style="color: var(--status-new);">⚠️ Clear All Orders Today</button>
           </div>
         </div>
@@ -447,7 +509,7 @@
 
   <!-- Kitchen & Admin Print Slip Modal -->
   <div class="modal-overlay" id="printSlipModal">
-    <div class="modal-body" style="max-width: 320px;">
+    <div class="modal-body" style="max-width: 340px;">
       <div id="printableSlip">
         <h3 style="text-align: center;" id="slipShopName">TEA SHOP</h3>
         <p style="text-align: center; font-size: 0.8rem; border-bottom: 1px dashed #000; padding-bottom: 5px;">KITCHEN ORDER TICKET (KOT)</p>
@@ -486,6 +548,7 @@
   </div>
 
   <script>
+    /* Firebase Configuration */
     const firebaseConfig = { apiKey: "", authDomain: "", databaseURL: "", projectId: "", storageBucket: "", messagingSenderId: "", appId: "" };
     let useFirebase = false, db = null;
 
@@ -508,23 +571,34 @@
       { id: "P10", name: "Water Bottle", category: "Others", price: 20, image: "https://images.unsplash.com/photo-1548839140-29a749e1bc4e?w=300&q=80", available: true }
     ];
 
-    let appSettings = JSON.parse(localStorage.getItem("qr_shop_settings")) || {
+    function safeJsonParse(key, fallback) {
+      try {
+        const data = localStorage.getItem(key);
+        return data ? JSON.parse(data) : fallback;
+      } catch (e) {
+        console.error("Corrupted LocalStorage key:", key, e);
+        return fallback;
+      }
+    }
+
+    let appSettings = safeJsonParse("qr_shop_settings", {
       shopName: "Tea & Snacks Corner", 
       logo: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=100&q=80", 
       currency: "₹", 
       upiId: "9876543210@paytm", 
+      adminPassword: "1234",
       gst: 0,
       baseUrl: window.location.origin + window.location.pathname
-    };
+    });
 
-    let categories = JSON.parse(localStorage.getItem("qr_categories")) || DEFAULT_CATEGORIES;
-    let products = JSON.parse(localStorage.getItem("qr_products")) || DEFAULT_PRODUCTS;
-    let tableList = JSON.parse(localStorage.getItem("qr_tables")) || ["T01", "T02", "T03", "T04", "T05"];
+    let categories = safeJsonParse("qr_categories", DEFAULT_CATEGORIES);
+    let products = safeJsonParse("qr_products", DEFAULT_PRODUCTS);
+    let tableList = safeJsonParse("qr_tables", ["T01", "T02", "T03", "T04", "T05"]);
     
-    let activeOrders = {}, activeCart = {}, selectedCategory = "Tea", activeDispatchFilter = "All", currentTable = "T01", isDispatchScreen = false;
-    let audioUnlocked = false;
+    let activeOrders = {}, activeCart = {}, selectedCategory = "Tea", activeDispatchFilter = "All", currentTable = "T01", currentView = "customer";
+    let audioUnlocked = false, isPrinting = false;
 
-    // Sanitize string to prevent XSS
+    /* Security HTML Sanitization */
     function escapeHtml(str) {
       if (!str) return '';
       return String(str)
@@ -535,13 +609,11 @@
         .replace(/'/g, "&#039;");
     }
 
-    // Image Error Fallback Handler
     function handleImageError(img) {
       img.onerror = null;
       img.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="%2394a3b8" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>';
     }
 
-    // Non-blocking Toast Alerts
     function showToast(msg, type = "info") {
       const container = document.getElementById("toastContainer");
       const toast = document.createElement("div");
@@ -554,7 +626,6 @@
       }, 3000);
     }
 
-    // Custom Modal Confirm Dialog
     function showConfirm(message, callback) {
       const modal = document.getElementById("dialogModal");
       document.getElementById("dialogTitle").innerText = "Confirm Action";
@@ -564,21 +635,11 @@
       const confirmBtn = document.getElementById("dialogConfirmBtn");
       const cancelBtn = document.getElementById("dialogCancelBtn");
 
-      const handleConfirm = () => { cleanup(); callback(true); };
-      const handleCancel = () => { cleanup(); callback(false); };
-
-      function cleanup() {
-        modal.classList.remove("active");
-        confirmBtn.removeEventListener("click", handleConfirm);
-        cancelBtn.removeEventListener("click", handleCancel);
-      }
-
-      confirmBtn.addEventListener("click", handleConfirm);
-      cancelBtn.addEventListener("click", handleCancel);
+      confirmBtn.onclick = () => { modal.classList.remove("active"); callback(true); };
+      cancelBtn.onclick = () => { modal.classList.remove("active"); callback(false); };
       modal.classList.add("active");
     }
 
-    // Custom Modal Prompt Dialog
     function showPrompt(title, defaultValue, callback) {
       const modal = document.getElementById("dialogModal");
       document.getElementById("dialogTitle").innerText = title;
@@ -592,22 +653,56 @@
       const confirmBtn = document.getElementById("dialogConfirmBtn");
       const cancelBtn = document.getElementById("dialogCancelBtn");
 
-      const handleConfirm = () => { const val = input.value; cleanup(); callback(val); };
-      const handleCancel = () => { cleanup(); callback(null); };
-
-      function cleanup() {
-        modal.classList.remove("active");
-        confirmBtn.removeEventListener("click", handleConfirm);
-        cancelBtn.removeEventListener("click", handleCancel);
-      }
-
-      confirmBtn.addEventListener("click", handleConfirm);
-      cancelBtn.addEventListener("click", handleCancel);
+      confirmBtn.onclick = () => { const val = input.value; modal.classList.remove("active"); callback(val); };
+      cancelBtn.onclick = () => { modal.classList.remove("active"); callback(null); };
       modal.classList.add("active");
       setTimeout(() => input.focus(), 100);
     }
 
-    /* AUTOMATIC CUSTOMER VIEW DIRECT OPEN ON QR SCAN */
+    function switchView(viewName, pushHistory = true) {
+      currentView = viewName;
+      
+      if (viewName === 'dispatch') {
+        closeAdminModal();
+        document.getElementById("customerView").style.display = "none";
+        document.getElementById("cartSummaryBar").style.display = "none";
+        document.getElementById("dispatchView").style.display = "block";
+        document.getElementById("headerTableDisplay").innerText = "DISPATCH SCREEN";
+        if (pushHistory) {
+          try {
+            history.pushState({ view: 'dispatch' }, "", "?screen=dispatch");
+          } catch (e) {
+            console.warn("History pushState restricted in current environment:", e);
+          }
+        }
+        renderDispatchOrders();
+        updateDashboardMetrics();
+      } else if (viewName === 'customer') {
+        closeAdminModal();
+        document.getElementById("dispatchView").style.display = "none";
+        document.getElementById("customerView").style.display = "block";
+        document.getElementById("cartSummaryBar").style.display = "flex";
+        document.getElementById("headerTableDisplay").innerText = "Table: " + escapeHtml(currentTable);
+        if (pushHistory) {
+          try {
+            history.pushState({ view: 'customer', table: currentTable }, "", "?table=" + encodeURIComponent(currentTable));
+          } catch (e) {
+            console.warn("History pushState restricted in current environment:", e);
+          }
+        }
+        renderProducts();
+      }
+    }
+
+    window.addEventListener("popstate", (e) => {
+      if (e.state && e.state.view) {
+        switchView(e.state.view, false);
+      } else {
+        const params = new URLSearchParams(window.location.search);
+        switchView(params.get("screen") === "dispatch" ? "dispatch" : "customer", false);
+      }
+    });
+
     window.addEventListener("DOMContentLoaded", () => {
       const savedTheme = localStorage.getItem("qr_theme") || "light";
       document.documentElement.setAttribute("data-theme", savedTheme);
@@ -616,18 +711,12 @@
       const screenParam = urlParams.get("screen");
       const tableParam = urlParams.get("table");
 
+      if (tableParam) currentTable = tableParam;
+
       if (screenParam === "dispatch") {
-        openDispatchView();
+        switchView("dispatch", false);
       } else {
-        // Automatic Customer View Load for Scanned Table
-        isDispatchScreen = false;
-        if (tableParam) {
-          currentTable = tableParam;
-        }
-        document.getElementById("dispatchView").style.display = "none";
-        document.getElementById("customerView").style.display = "block";
-        document.getElementById("cartSummaryBar").style.display = "flex";
-        document.getElementById("headerTableDisplay").innerText = "Table: " + escapeHtml(currentTable);
+        switchView("customer", false);
       }
 
       applySettingsUI(); renderCategories(); renderProducts(); initLiveClock(); setupDatabaseListeners();
@@ -644,36 +733,29 @@
       window.addEventListener("keydown", (e) => {
         pressed[e.key.toLowerCase()] = true;
         
-        // Admin Modal Shortcut (Ctrl + Alt + Shift + A + S)
+        // Admin Shortcut (Ctrl + Alt + Shift + A + S)
         if (e.ctrlKey && e.altKey && e.shiftKey && pressed['a'] && pressed['s']) {
           e.preventDefault(); openAdminModal();
         }
 
         // Dispatch Screen Shortcut (Ctrl + Shift + A)
         if (e.ctrlKey && e.shiftKey && !e.altKey && e.key.toLowerCase() === 'a') {
-          e.preventDefault();
-          openDispatchView();
+          e.preventDefault(); switchView('dispatch');
         }
       });
       window.addEventListener("keyup", (e) => { delete pressed[e.key.toLowerCase()]; });
-    });
 
-    // Dispatch Screen-க்கு நேரடியாக மாறுவதற்கான Function
-    function openDispatchView() {
-      isDispatchScreen = true;
-      document.getElementById("customerView").style.display = "none";
-      document.getElementById("cartSummaryBar").style.display = "none";
-      document.getElementById("dispatchView").style.display = "block";
-      document.getElementById("headerTableDisplay").innerText = "DISPATCH SCREEN";
-      renderDispatchOrders();
-      updateDashboardMetrics();
-      showToast("Dispatch Screen-க்கு மாறப்பட்டது!", "info");
-    }
+      window.addEventListener("beforeprint", () => { isPrinting = true; });
+      window.addEventListener("afterprint", () => {
+        isPrinting = false;
+        document.body.classList.remove("printing-qrs", "printing-slip");
+      });
+    });
 
     function initLiveClock() {
       setInterval(() => {
         document.getElementById("liveClock").innerText = new Date().toLocaleTimeString();
-        if (isDispatchScreen) updateTimerDisplays();
+        if (currentView === "dispatch") updateTimerDisplays();
       }, 1000);
     }
 
@@ -685,29 +767,34 @@
 
     function setupDatabaseListeners() {
       if (useFirebase) {
+        db.ref("orders").off(); // Clear duplicate listeners
         db.ref("orders").on("value", (snapshot) => handleIncomingOrders(snapshot.val() || {}));
       } else {
         document.getElementById("dbStatusDot").className = "status-indicator offline";
         document.getElementById("dbStatusText").innerText = "Local Mode";
-        handleIncomingOrders(JSON.parse(localStorage.getItem("qr_orders_db")) || {});
-        window.addEventListener("storage", () => { handleIncomingOrders(JSON.parse(localStorage.getItem("qr_orders_db")) || {}); });
+        handleIncomingOrders(safeJsonParse("qr_orders_db", {}));
+        window.addEventListener("storage", () => { handleIncomingOrders(safeJsonParse("qr_orders_db", {})); });
       }
     }
 
     let previousOrderCount = 0;
     function handleIncomingOrders(ordersObj) {
       const newKeys = Object.keys(ordersObj);
-      if (isDispatchScreen && newKeys.length > previousOrderCount && previousOrderCount !== 0) playNotificationAlert();
+      if (currentView === "dispatch" && newKeys.length > previousOrderCount && previousOrderCount !== 0) playNotificationAlert();
       previousOrderCount = newKeys.length;
       activeOrders = ordersObj;
-      if (isDispatchScreen) { renderDispatchOrders(); updateDashboardMetrics(); }
+      if (currentView === "dispatch") { renderDispatchOrders(); updateDashboardMetrics(); }
     }
 
     function saveOrdersState() {
       if (useFirebase) db.ref("orders").set(activeOrders);
       else {
-        localStorage.setItem("qr_orders_db", JSON.stringify(activeOrders));
-        renderDispatchOrders(); updateDashboardMetrics();
+        try {
+          localStorage.setItem("qr_orders_db", JSON.stringify(activeOrders));
+        } catch(e) {
+          showToast("Storage quota exceeded!", "error");
+        }
+        if (currentView === "dispatch") { renderDispatchOrders(); updateDashboardMetrics(); }
       }
     }
 
@@ -733,9 +820,9 @@
           <div class="product-title">${escapeHtml(p.name)}</div>
           <div class="product-price">${escapeHtml(appSettings.currency)}${p.price.toFixed(2)}</div>
           <div class="qty-control">
-            <button class="qty-btn" onclick="updateCartQuantity('${p.id}', -1)">-</button>
+            <button class="qty-btn" onclick="updateCartQuantity('${escapeHtml(p.id)}', -1)">-</button>
             <span style="font-weight:700;">${qty}</span>
-            <button class="qty-btn" onclick="updateCartQuantity('${p.id}', 1)">+</button>
+            <button class="qty-btn" onclick="updateCartQuantity('${escapeHtml(p.id)}', 1)">+</button>
           </div>
         `;
         container.appendChild(card);
@@ -765,9 +852,14 @@
     function submitCustomerOrder() {
       if (Object.keys(activeCart).length === 0) return showToast("Add items to cart first!", "error");
       const submitBtn = document.getElementById("btnSubmitOrder");
+      if (submitBtn.disabled) return;
       submitBtn.disabled = true;
 
-      const orderId = "ORD-" + Math.floor(1000 + Math.random() * 9000);
+      let orderId;
+      do {
+        orderId = "ORD-" + Date.now().toString().slice(-4) + Math.floor(100 + Math.random() * 900);
+      } while (activeOrders[orderId]);
+
       let subtotal = 0;
       const itemsList = Object.values(activeCart).map(i => {
         subtotal += i.qty * i.product.price;
@@ -789,7 +881,7 @@
 
       document.getElementById("successModal").classList.add("active");
       clearCart();
-      setTimeout(() => { submitBtn.disabled = false; }, 5000);
+      setTimeout(() => { submitBtn.disabled = false; }, 4000);
     }
 
     function setDispatchFilter(filter, btn) {
@@ -822,17 +914,17 @@
 
         card.innerHTML = `
           <div class="order-header">
-            <div><div class="order-table">${escapeHtml(ord.table)}</div><div style="font-size:0.8rem; color:var(--text-muted)">#${ord.id}</div></div>
-            <div style="text-align:right;"><span class="badge bg-${ord.status.toLowerCase()}">${ord.status}</span><div class="order-timer">${formatTimer(elapsedSec)}</div></div>
+            <div><div class="order-table">${escapeHtml(ord.table)}</div><div style="font-size:0.8rem; color:var(--text-muted)">#${escapeHtml(ord.id)}</div></div>
+            <div style="text-align:right;"><span class="badge bg-${ord.status.toLowerCase()}">${escapeHtml(ord.status)}</span><div class="order-timer">${formatTimer(elapsedSec)}</div></div>
           </div>
           <ul class="order-items-list">${itemsHtml}</ul>
           <div style="font-weight:700; text-align:right; margin-bottom:10px;">Total: ${escapeHtml(appSettings.currency)}${total.toFixed(2)}</div>
           <div class="order-actions">
-            <button class="btn-status" style="background:var(--status-preparing);" onclick="changeOrderStatus('${ord.id}', 'Preparing')">Preparing</button>
-            <button class="btn-status" style="background:var(--status-ready);" onclick="changeOrderStatus('${ord.id}', 'Ready')">Ready</button>
-            <button class="btn-status" style="background:var(--status-dispatched);" onclick="changeOrderStatus('${ord.id}', 'Dispatched')">Dispatch</button>
-            <button class="btn-icon" onclick="openPrintSlip('${ord.id}')">🖨️</button>
-            <button class="btn-icon" onclick="deleteOrder('${ord.id}')" style="color:var(--status-new)">🗑️</button>
+            <button class="btn-status" style="background:var(--status-preparing);" onclick="changeOrderStatus('${escapeHtml(ord.id)}', 'Preparing')">Preparing</button>
+            <button class="btn-status" style="background:var(--status-ready);" onclick="changeOrderStatus('${escapeHtml(ord.id)}', 'Ready')">Ready</button>
+            <button class="btn-status" style="background:var(--status-dispatched);" onclick="changeOrderStatus('${escapeHtml(ord.id)}', 'Dispatched')">Dispatch</button>
+            <button class="btn-icon" onclick="openPrintSlip('${escapeHtml(ord.id)}')">🖨️</button>
+            <button class="btn-icon" onclick="deleteOrder('${escapeHtml(ord.id)}')" style="color:var(--status-new)">🗑️</button>
           </div>
         `;
         grid.appendChild(card);
@@ -880,7 +972,10 @@
         const osc = ctx.createOscillator(); osc.type = "sine"; osc.frequency.setValueAtTime(880, ctx.currentTime);
         osc.connect(ctx.destination); osc.start(); osc.stop(ctx.currentTime + 0.3);
       } catch(e){}
-      if ('speechSynthesis' in window) speechSynthesis.speak(new SpeechSynthesisUtterance("New Order Received"));
+      if ('speechSynthesis' in window) {
+        speechSynthesis.cancel();
+        speechSynthesis.speak(new SpeechSynthesisUtterance("New Order Received"));
+      }
     }
 
     function openPrintSlip(id) {
@@ -894,22 +989,29 @@
     }
 
     function printSlipDirect() {
+      if (isPrinting) return;
       document.body.classList.add("printing-slip");
       document.body.classList.remove("printing-qrs");
-      window.print();
+      isPrinting = true;
+      setTimeout(() => {
+        window.print();
+      }, 100);
     }
 
     function openAdminModal() { document.getElementById("adminModal").classList.add("active"); }
     function closeAdminModal() { document.getElementById("adminModal").classList.remove("active"); }
 
     function authenticateAdmin() {
-      if (document.getElementById("adminPasswordInput").value === "1234") {
+      const inputPass = document.getElementById("adminPasswordInput").value;
+      const storedPass = appSettings.adminPassword || "1234";
+      if (inputPass === storedPass) {
         document.getElementById("adminAuthSection").style.display = "none";
         document.getElementById("adminContentSection").style.display = "block";
         populateCategorySelect(); renderAdminProductsList(); renderQRCodesManager(); renderAdminCategoryList(); renderAdminBills();
         document.getElementById("settingShopName").value = appSettings.shopName || "";
         document.getElementById("settingBaseUrl").value = appSettings.baseUrl || (window.location.origin + window.location.pathname);
         document.getElementById("settingUpiId").value = appSettings.upiId || "";
+        document.getElementById("settingAdminPassword").value = appSettings.adminPassword || "1234";
         document.getElementById("settingShopLogo").value = appSettings.logo || "";
         document.getElementById("settingCurrency").value = appSettings.currency || "₹";
         document.getElementById("settingGST").value = appSettings.gst || 0;
@@ -939,7 +1041,7 @@
     function addNewCategory() {
       const input = document.getElementById("newCatInput"); const name = input.value.trim();
       if (!name) return showToast("Enter category name!", "error");
-      if (categories.includes(name)) return showToast("Category already exists!", "error");
+      if (categories.some(c => c.toLowerCase() === name.toLowerCase())) return showToast("Category already exists!", "error");
       categories.push(name); saveCategoriesData(); input.value = "";
       showToast("Category added!", "success");
     }
@@ -986,8 +1088,8 @@
         container.innerHTML += `<div style="display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid var(--border-color);">
           <span><b>${escapeHtml(p.name)}</b> (${escapeHtml(p.category)}) - ${escapeHtml(appSettings.currency)}${p.price}</span>
           <div>
-            <button onclick="editProduct('${p.id}')" style="color:var(--primary); background:none; border:none; cursor:pointer; margin-right:8px;">Edit</button>
-            <button onclick="deleteProduct('${p.id}')" style="color:red; background:none; border:none; cursor:pointer;">Delete</button>
+            <button onclick="editProduct('${escapeHtml(p.id)}')" style="color:var(--primary); background:none; border:none; cursor:pointer; margin-right:8px;">Edit</button>
+            <button onclick="deleteProduct('${escapeHtml(p.id)}')" style="color:red; background:none; border:none; cursor:pointer;">Delete</button>
           </div>
         </div>`;
       });
@@ -1007,10 +1109,10 @@
     function saveProduct(e) {
       e.preventDefault();
       const prodId = document.getElementById("prodId").value;
-      const name = document.getElementById("prodName").value;
+      const name = document.getElementById("prodName").value.trim();
       const category = document.getElementById("prodCategory").value;
       const price = parseFloat(document.getElementById("prodPrice").value);
-      const image = document.getElementById("prodImage").value;
+      const image = document.getElementById("prodImage").value.trim();
 
       if (prodId) {
         const index = products.findIndex(p => p.id === prodId);
@@ -1018,9 +1120,8 @@
           products[index] = { ...products[index], name, category, price, image };
         }
       } else {
-        products.push({
-          id: "P" + (products.length + 1), name, category, price, image, available: true
-        });
+        const uniqueId = "P" + Date.now().toString(36) + Math.random().toString(36).substr(2, 4);
+        products.push({ id: uniqueId, name, category, price, image, available: true });
       }
 
       localStorage.setItem("qr_products", JSON.stringify(products));
@@ -1045,11 +1146,12 @@
     }
 
     function saveShopSettings() {
-      appSettings.shopName = document.getElementById("settingShopName").value || appSettings.shopName;
-      appSettings.baseUrl = document.getElementById("settingBaseUrl").value || (window.location.origin + window.location.pathname);
-      appSettings.upiId = document.getElementById("settingUpiId").value || appSettings.upiId;
-      appSettings.logo = document.getElementById("settingShopLogo").value || appSettings.logo;
-      appSettings.currency = document.getElementById("settingCurrency").value || appSettings.currency;
+      appSettings.shopName = document.getElementById("settingShopName").value.trim() || appSettings.shopName;
+      appSettings.baseUrl = document.getElementById("settingBaseUrl").value.trim() || (window.location.origin + window.location.pathname);
+      appSettings.upiId = document.getElementById("settingUpiId").value.trim() || appSettings.upiId;
+      appSettings.adminPassword = document.getElementById("settingAdminPassword").value.trim() || appSettings.adminPassword || "1234";
+      appSettings.logo = document.getElementById("settingShopLogo").value.trim() || appSettings.logo;
+      appSettings.currency = document.getElementById("settingCurrency").value.trim() || appSettings.currency;
       appSettings.gst = parseFloat(document.getElementById("settingGST").value) || 0;
       
       localStorage.setItem("qr_shop_settings", JSON.stringify(appSettings));
@@ -1057,7 +1159,6 @@
       showToast("Settings Saved!", "success");
     }
 
-    /* DIRECT QR CODE GENERATION TO SCAN & OPEN CUSTOMER VIEW */
     function renderQRCodesManager() {
       const container = document.getElementById("qrCodeContainer"); container.innerHTML = "";
       let baseUrl = appSettings.baseUrl || (window.location.origin + window.location.pathname);
@@ -1065,7 +1166,6 @@
 
       tableList.forEach((tableNum, idx) => {
         const separator = baseUrl.includes("?") ? "&" : "?";
-        // Direct link to automatically open customer view for this table
         const tableUrl = `${baseUrl}${separator}table=${encodeURIComponent(tableNum)}`;
         const qrImg = `https://quickchart.io/qr?text=${encodeURIComponent(tableUrl)}&size=200`;
 
@@ -1092,6 +1192,7 @@
     }
 
     function printSelectedQRCodes() {
+      if (isPrinting) return;
       const checkboxes = document.querySelectorAll(".qr-select-checkbox");
       let selectedCards = [];
 
@@ -1110,41 +1211,45 @@
       document.body.classList.add("printing-qrs");
       document.body.classList.remove("printing-slip");
 
-      let loadedImages = 0;
+      let printTriggered = false;
+      const triggerPrintOnce = () => {
+        if (printTriggered || isPrinting) return;
+        printTriggered = true;
+        isPrinting = true;
+        setTimeout(() => {
+          window.print();
+        }, 100);
+      };
+
       const imagesToLoad = selectedCards.map(card => card.querySelector("img"));
+      let loadedCount = 0;
+
+      if (imagesToLoad.length === 0) {
+        triggerPrintOnce();
+        return;
+      }
 
       imagesToLoad.forEach(img => {
         if (img.complete) {
-          loadedImages++;
+          loadedCount++;
+          if (loadedCount === imagesToLoad.length) triggerPrintOnce();
         } else {
-          img.onload = () => {
-            loadedImages++;
-            if (loadedImages === imagesToLoad.length) {
-              window.print();
-            }
-          };
-          img.onerror = () => {
-            loadedImages++;
-            if (loadedImages === imagesToLoad.length) {
-              window.print();
-            }
+          img.onload = img.onerror = () => {
+            loadedCount++;
+            if (loadedCount === imagesToLoad.length) triggerPrintOnce();
           };
         }
       });
-
-      if (loadedImages === imagesToLoad.length) {
-        window.print();
-      }
-
-      setTimeout(() => {
-        document.body.classList.remove("printing-qrs");
-      }, 1500);
     }
 
     function addNewTable() {
       showPrompt("Enter new Table Name/ID:", "", (name) => {
         if (name && name.trim()) { 
-          tableList.push(name.trim()); 
+          const cleanName = name.trim();
+          if (tableList.some(t => t.toLowerCase() === cleanName.toLowerCase())) {
+            return showToast("Table already exists!", "error");
+          }
+          tableList.push(cleanName); 
           localStorage.setItem("qr_tables", JSON.stringify(tableList)); 
           renderQRCodesManager(); 
           showToast("Table added!", "success");
@@ -1155,7 +1260,8 @@
     function editTable(index) {
       showPrompt("Edit Table Name/ID:", tableList[index], (newName) => {
         if (newName && newName.trim()) { 
-          tableList[index] = newName.trim(); 
+          const cleanName = newName.trim();
+          tableList[index] = cleanName; 
           localStorage.setItem("qr_tables", JSON.stringify(tableList)); 
           renderQRCodesManager(); 
           showToast("Table updated!", "success");
@@ -1179,11 +1285,11 @@
       Object.values(activeOrders).sort((a,b) => b.timestamp - a.timestamp).forEach(ord => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
-          <td style="padding:6px;"><b>#${ord.id}</b></td>
+          <td style="padding:6px;"><b>#${escapeHtml(ord.id)}</b></td>
           <td style="padding:6px;">${escapeHtml(ord.table)}</td>
           <td style="padding:6px;">${new Date(ord.timestamp).toLocaleTimeString()}</td>
-          <td style="padding:6px;"><span class="badge bg-${ord.status.toLowerCase()}">${ord.status}</span></td>
-          <td style="padding:6px;"><button class="btn-icon" style="padding:4px 8px; font-size:0.75rem;" onclick="openPrintSlip('${ord.id}')">👁️ View Bill</button></li>
+          <td style="padding:6px;"><span class="badge bg-${ord.status.toLowerCase()}">${escapeHtml(ord.status)}</span></td>
+          <td style="padding:6px;"><button class="btn-icon" style="padding:4px 8px; font-size:0.75rem;" onclick="openPrintSlip('${escapeHtml(ord.id)}')">👁️ View Bill</button></td>
         `;
         tbody.appendChild(tr);
       });
@@ -1203,6 +1309,29 @@
       const a = document.createElement('a');
       a.href = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({ settings: appSettings, products, orders: activeOrders, tables: tableList }));
       a.download = `backup_${Date.now()}.json`; a.click();
+    }
+
+    function restoreDatabaseJSON(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        try {
+          const data = JSON.parse(evt.target.result);
+          if (data.settings) localStorage.setItem("qr_shop_settings", JSON.stringify(data.settings));
+          if (data.products) localStorage.setItem("qr_products", JSON.stringify(data.products));
+          if (data.tables) localStorage.setItem("qr_tables", JSON.stringify(data.tables));
+          if (data.orders) {
+            activeOrders = data.orders;
+            saveOrdersState();
+          }
+          showToast("Database restored successfully!", "success");
+          setTimeout(() => location.reload(), 1000);
+        } catch (err) {
+          showToast("Invalid JSON backup file!", "error");
+        }
+      };
+      reader.readAsText(file);
     }
 
     function clearTodaysOrders() {
