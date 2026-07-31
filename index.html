@@ -617,12 +617,7 @@
       const tableParam = urlParams.get("table");
 
       if (screenParam === "dispatch") {
-        // Dispatch Screen
-        isDispatchScreen = true;
-        document.getElementById("customerView").style.display = "none";
-        document.getElementById("cartSummaryBar").style.display = "none";
-        document.getElementById("dispatchView").style.display = "block";
-        document.getElementById("headerTableDisplay").innerText = "DISPATCH SCREEN";
+        openDispatchView();
       } else {
         // Automatic Customer View Load for Scanned Table
         isDispatchScreen = false;
@@ -648,12 +643,32 @@
       let pressed = {};
       window.addEventListener("keydown", (e) => {
         pressed[e.key.toLowerCase()] = true;
+        
+        // Admin Modal Shortcut (Ctrl + Alt + Shift + A + S)
         if (e.ctrlKey && e.altKey && e.shiftKey && pressed['a'] && pressed['s']) {
           e.preventDefault(); openAdminModal();
+        }
+
+        // Dispatch Screen Shortcut (Ctrl + Shift + A)
+        if (e.ctrlKey && e.shiftKey && !e.altKey && e.key.toLowerCase() === 'a') {
+          e.preventDefault();
+          openDispatchView();
         }
       });
       window.addEventListener("keyup", (e) => { delete pressed[e.key.toLowerCase()]; });
     });
+
+    // Dispatch Screen-க்கு நேரடியாக மாறுவதற்கான Function
+    function openDispatchView() {
+      isDispatchScreen = true;
+      document.getElementById("customerView").style.display = "none";
+      document.getElementById("cartSummaryBar").style.display = "none";
+      document.getElementById("dispatchView").style.display = "block";
+      document.getElementById("headerTableDisplay").innerText = "DISPATCH SCREEN";
+      renderDispatchOrders();
+      updateDashboardMetrics();
+      showToast("Dispatch Screen-க்கு மாறப்பட்டது!", "info");
+    }
 
     function initLiveClock() {
       setInterval(() => {
