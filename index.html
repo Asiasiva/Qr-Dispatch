@@ -9,6 +9,14 @@
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 
+  <!-- Early Image Error Fallback Handler -->
+  <script>
+    function handleImageError(img) {
+      img.onerror = null;
+      img.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="%2394a3b8" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>';
+    }
+  </script>
+
   <style>
     :root {
       --primary: #d97706;
@@ -379,6 +387,7 @@
     </main>
   </div>
 
+  <!-- Admin Modal (Secret Shortcut: Ctrl + Alt + S) -->
   <div class="modal-overlay" id="adminModal">
     <div class="modal-body">
       <button class="modal-close no-print" onclick="closeAdminModal()">&times;</button>
@@ -609,11 +618,6 @@
         .replace(/'/g, "&#039;");
     }
 
-    function handleImageError(img) {
-      img.onerror = null;
-      img.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="%2394a3b8" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>';
-    }
-
     function showToast(msg, type = "info") {
       const container = document.getElementById("toastContainer");
       const toast = document.createElement("div");
@@ -733,8 +737,8 @@
       window.addEventListener("keydown", (e) => {
         pressed[e.key.toLowerCase()] = true;
         
-        // Admin Shortcut (Ctrl + Alt + Shift + A + S)
-        if (e.ctrlKey && e.altKey && e.shiftKey && pressed['a'] && pressed['s']) {
+        // Admin Shortcut (Ctrl + Alt + S)
+        if (e.ctrlKey && e.altKey && e.key.toLowerCase() === 's') {
           e.preventDefault(); openAdminModal();
         }
 
@@ -744,12 +748,12 @@
         }
       });
       window.addEventListener("keyup", (e) => { delete pressed[e.key.toLowerCase()]; });
+    });
 
-      window.addEventListener("beforeprint", () => { isPrinting = true; });
-      window.addEventListener("afterprint", () => {
-        isPrinting = false;
-        document.body.classList.remove("printing-qrs", "printing-slip");
-      });
+    window.addEventListener("beforeprint", () => { isPrinting = true; });
+    window.addEventListener("afterprint", () => {
+      isPrinting = false;
+      document.body.classList.remove("printing-qrs", "printing-slip");
     });
 
     function initLiveClock() {
