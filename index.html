@@ -196,22 +196,40 @@
       }
 
       /* 2. ADMIN QR CODES - PREVENT BLANK PAGES & OVERFLOW */
+      body.printing-qrs #adminModal,
+      body.printing-qrs .modal-body,
+      body.printing-qrs #adminContentSection,
+      body.printing-qrs #qrTab {
+        position: static !important;
+        display: block !important;
+        overflow: visible !important;
+        max-height: none !important;
+        height: auto !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        border: none !important;
+      }
+
       body.printing-qrs #qrCodeContainer,
       body.printing-qrs #qrCodeContainer * {
         visibility: visible !important;
       }
 
       body.printing-qrs #qrCodeContainer {
-        position: absolute !important;
-        left: 0 !important;
-        top: 0 !important;
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        margin: 15px auto !important;
         width: 100% !important;
         display: flex !important;
         flex-wrap: wrap !important;
         justify-content: center !important;
-        align-items: center !important;
+        align-items: flex-start !important;
         gap: 20px !important;
-        padding: 20px !important;
+        padding: 10px !important;
         box-sizing: border-box !important;
         background: #ffffff !important;
       }
